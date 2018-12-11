@@ -1,0 +1,96 @@
+$font-stack: 'Lato', sans-serif
+$color-1: #f0f3f6
+$color-2: #f3df50
+$color-3: #e3673d
+$color-4: #357ed4
+$color-5: #04208c
+
+$display-font-stack: brandon-grotesque, sans-serif
+// 400, 700, 900, italic
+
+body
+    font-family: $font-stack
+
+.steamy-title
+    background-image: linear-gradient($color-4, $color-5)
+    font-size: 3rem
+    font-weight: 800
+    color: $color-2
+    padding: 8rem 1rem 0rem 1rem
+    text-align: center
+    background-color: $color-4
+    font-family: $display-font-stack
+    min-height: 100vh
+    position: relative
+
+    h1
+        font-weight: 700
+        font-size: 4rem
+
+    h2
+        font-style: italic
+        font-size: 1.8rem
+
+    .waves
+        margin-bottom: 4rem
+
+
+    .yay
+        position: absolute
+        bottom: 0
+        font-size: 1.5rem
+        font-weight: 400
+        width: 10rem
+        left: 50%
+        transform: translateX(-50%)
+        .arrow
+            fill: $color-2
+
+.Love
+    font-family: 'Sorts Mill Goudy', sans-serif
+    font-size: 0.6rem
+
+h3
+    font-family: $display-font-stack
+    font-size: 2rem
+    color: $color-3
+    text-align: center
+
+    border-bottom: 3px solid $color-3
+    font-weight: 700
+    width: 50%
+    margin: 0 auto 3rem auto
+
+h4
+    color: $color-4
+    font-family: $display-font-stack
+    text-align: left
+    font-weight: 700
+
+#basics
+    position: relative
+    min-height: 100vh
+    background-image: linear-gradient($color-2, $color-1 33%)
+    .col-md
+        margin-top: 15%
+
+#travel
+    min-height: 100vh
+    position: relative
+    .location
+        opacity: 0
+        position: absolute
+    .location-details
+        opacity: 0
+    #sfo
+        top: 100px
+        left: 50px
+    #oak
+        top: 40px
+        left: 120px
+    #sjc
+        top: 200px
+        left: 135px
+    #mry
+        top: 450px
+        left: 90px
