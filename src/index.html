@@ -79,13 +79,20 @@ layout: layout.hbs
 </div>
 
 <div id="travel2">
-  <div class="row">
-    <svg width="740px" height="1500px" viewBox="0 0 740 1500" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <div id="map">
+    <svg
+        width="auto"
+        height="100vh"
+        viewBox="0 0 740 1500"
+        version="1.1"
+        preserveAspectRatio="xMinYMin meet"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink">
       <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="map-so-far-no-palette">
           <g id="water" fill="#0A208F">
             <g id="Group">
-              <polyline id="path52_1_" points="5.21241036e-15 -1.13686838e-13 676.616529 2.1649349e-13 652.660331 54.4452756 663.761983 65.5685039 668.436364 76.6917323 676.616529 86.0586614 689.471074 90.742126 698.235537 88.9858268 701.157025 98.3527559 707 109.475984 698.819835 124.697244 659.087603 96.0110236 643.31157 76.6917323 626.366942 111.232283 600.073554 177.971654 566.768595 223.635433 538.722314 258.175984 505.417355 282.17874 474.449587 299.156299 457.504959 303.839764 442.897521 301.498031 435.88595 277.495276 430.042975 259.34685 415.435537 247.638189 406.086777 235.929528 407.839669 226.562598 397.322314 214.853937 385.636364 208.999606 376.871901 216.024803 371.028926 231.246063 359.927273 246.467323 349.409917 259.932283 342.982645 249.394488 335.971074 252.321654 324.285124 271.640945 315.520661 286.862205 310.846281 299.741732 299.744628 297.985433 288.642975 296.229134 288.642975 314.377559 297.991736 329.013386 317.857851 353.601575 324.285124 348.91811 331.296694 346.576378 337.139669 352.430709 337.723967 361.797638 348.241322 359.455906 348.241322 372.335433 345.904132 387.556693 337.139669 391.654724 337.723967 403.363386 342.398347 406.290551 341.81405 419.755512 338.892562 434.976772 319.026446 432.049606 307.340496 427.366142 296.238843 425.609843 291.564463 434.391339 300.328926 444.929134 309.677686 451.954331 303.250413 463.077559 303.834711 469.517323 302.081818 480.640551 293.901653 487.665748 293.317355 499.374409 293.901653 536.256693 300.913223 549.13622 298.576033 566.11378 296.82314 579.57874 303.834711 617.63189 304.419008 632.85315 296.238843 646.31811 294.48595 672.077165 300.913223 687.298425 300.328926 703.105118 300.913223 711.886614 293.901653 724.766142 291.564463 735.303937 289.81157 754.623228 289.227273 773.94252 289.227273 792.090945 293.317355 803.799606 289.227273 816.679134 281.047107 823.118898 276.372727 851.219685 265.271074 868.197244 290.980165 885.760236 297.407438 907.42126 310.261983 925.569685 324.869421 937.278346 331.880992 954.255906 332.465289 981.185827 334.218182 1002.84685 345.904132 1026.84961 364.017355 1046.1689 383.299174 1046.75433 405.502479 1069.58622 440.560331 1109.39567 471.528099 1145.10709 501.91157 1187.25827 512.428926 1211.26102 531.710744 1235.84921 552.161157 1282.68386 565.6 1326.00591 579.038843 1351.76496 583.128926 1411.47913 594.814876 1440.75079 608.253719 1460.07008 604.163636 1487 0 1487"></polyline>
+              <polyline id="path52_1_" points="5.21241036e-15 -1.13686838e-13 676.616529 2.1649349e-13 652.660331 54.4452756 663.761983 65.5685039 668.436364 76.6917323 676.616529 86.0586614 689.471074 90.742126 698.235537 88.9858268 701.157025 98.3527559 707 109.475984 698.819835 124.697244 659.087603 96.0110236 643.31157 76.6917323 626.366942 111.232283 600.073554 177.971654 566.768595 223.635433 538.722314 258.175984 505.417355 282.17874 474.449587 299.156299 457.504959 303.839764 442.897521 301.498031 435.88595 277.495276 430.042975 259.34685 415.435537 247.638189 406.086777 235.929528 407.839669 226.562598 397.322314 214.853937 385.636364 208.999606 376.871901 216.024803 371.028926 231.246063 359.927273 246.467323 349.409917 259.932283 342.982645 249.394488 335.971074 252.321654 324.285124 271.640945 315.520661 286.862205 310.846281 299.741732 299.744628 297.985433 288.642975 296.229134 288.642975 314.377559 297.991736 329.013386 317.857851 353.601575 324.285124 348.91811 331.296694 346.576378 337.139669 352.430709 337.723967 361.797638 348.241322 359.455906 348.241322 372.335433 345.904132 387.556693 337.139669 391.654724 337.723967 403.363386 342.398347 406.290551 341.81405 419.755512 338.892562 434.976772 319.026446 432.049606 307.340496 427.366142 296.238843 425.609843 291.564463 434.391339 300.328926 444.929134 309.677686 451.954331 303.250413 463.077559 303.834711 469.517323 302.081818 480.640551 293.901653 487.665748 293.317355 499.374409 293.901653 536.256693 300.913223 549.13622 298.576033 566.11378 296.82314 579.57874 303.834711 617.63189 304.419008 632.85315 296.238843 646.31811 294.48595 672.077165 300.913223 687.298425 300.328926 703.105118 300.913223 711.886614 293.901653 724.766142 291.564463 735.303937 289.81157 754.623228 289.227273 773.94252 289.227273 792.090945 293.317355 803.799606 289.227273 816.679134 281.047107 823.118898 276.372727 851.219685 265.271074 868.197244 290.980165 885.760236 297.407438 907.42126 310.261983 925.569685 324.869421 937.278346 331.880992 954.255906 332.465289 981.185827 334.218182 1002.84685 345.904132 1026.84961 364.017355 1046.1689 383.299174 1046.75433 405.502479 1069.58622 440.560331 1109.39567 471.528099 1145.10709 501.91157 1187.25827 512.428926 1211.26102 531.710744 1235.84921 552.161157 1282.68386 565.6 1326.00591 579.038843 1351.76496 583.128926 1411.47913 594.814876 1440.75079 608.253719 1460.07008 604.163636 1500 0 1500"></polyline>
             </g>
           </g>
           <g id="highway" transform="translate(280.000000, 6.000000)" stroke="#1A80D8" stroke-width="5">
@@ -100,12 +107,94 @@ layout: layout.hbs
             <ellipse id="Oval" cx="26.8403806" cy="377.875161" rx="11.0862442" ry="11.1309873"></ellipse>
             <ellipse id="Oval" cx="11.6697307" cy="452.277023" rx="11.0862442" ry="11.1309873"></ellipse>
             <ellipse id="Oval" cx="135.368876" cy="708.289732" rx="11.0862442" ry="11.1309873"></ellipse>
+            <ellipse id="Oval" cx="195.056991" cy="812.86158" rx="11.0862442" ry="11.1309873"></ellipse>
           </g>
         </g>
       </g>
     </svg>
   </div>
 </div>
+
+<div class="row" id="landmarks">
+  <div class="col-sm-6 offset-sm-6">
+    <div class="card-body">
+      <h5 class="card-title">Airport</h5>
+      <h6 class="card-subtitle">Monterey Regional (MRY)</h6>
+      <p class="card-text">
+        🌎 Here there be dragons. 🐉 This is a very small airport, but it's a lot closer to Big Sur than SFO, OAK, and SJC.
+      </p>
+    </div>
+
+    <div class="card-body">
+      <h5 class="card-title">Lodging</h5>
+      <h6 class="card-subtitle">Carmel Mission Inn</h6>
+      <p class="card-text">
+        A place to stay that's a bit more convenient to the big Bay Area airports. We have a room rate lock here (not exactly a room block, but something like that!).
+      </p>
+    </div>
+
+    <div class="card-body">
+      <h5 class="card-title">Chill beach hangs</h5>
+      <h6 class="card-subtitle">Garrapata State Park</h6>
+      <img src="./img/garrapata-small.png" alt="Garrapata State Park">
+      <p class="card-text">
+        On Sunday morning, join us for a casual hangout on the beach with some breakfast treats.
+      </p>
+    </div>
+
+    <div class="card-body">
+      <h5 class="card-title">Lodging️</h5>
+      <h6 class="card-subtitle">Notley's Landing</h6>
+      <p class="card-text">
+        Airbnbs are not allowed in Big Sur proper, so Notley's Landing is about as close as you can get. Find a group and book early!
+      </p>
+    </div>
+
+    <div class="card-body">
+      <h5 class="card-title">Sight</h5>
+      <h6 class="card-subtitle">Bixby Bridge</h6>
+      <img src="./img/bixby-small.png" alt="Bixby Bridge">
+      <p class="card-text">
+        An epic bridge. We dare you to not hum "Cold Little Heart" by Michael Kiwanuka (i.e., the theme song from <em>Big Little Lies</em>) while driving over it.
+      </p>
+      <iframe src="https://open.spotify.com/embed/track/7KX65PC1UZuImsUInThbav" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+    </div>
+
+    <div class="card-body">
+      <h5 class="card-title">Lodging️</h5>
+      <h6 class="card-subtitle">Big Sur Lodge</h6>
+      <p class="card-text">
+        We have a room block here, and we'll hold a welcome event on the patio on Friday night. Pro tip: the cottages can comfortably sleep two couples if you want to share! 🤝
+      </p>
+    </div>
+
+    <div class="card-body">
+      <h5 class="card-title">Sight</h5>
+      <h6 class="card-subtitle">McWay Falls</h6>
+      <img src="./img/mcway-small.jpg" alt="McWay Falls onto McWay Beach">
+      <p class="card-text">
+        It's a waterfall onto a beach. No McWay? Yes McWay!
+      </p>
+    </div>
+
+    <div class="card-body">
+      <h5 class="card-title">Venue</h5>
+      <h6 class="card-subtitle">Cliffside private residence</h6>
+      <img src="./img/anderson2-small.png" alt="Anderson Canyon">
+      <p class="card-text">
+        Vows &<br />
+        Drinks &<br />
+        Food &<br />
+        Dancing &<br />
+        Amy &<br />
+        Steve &<br />
+        You!
+      </p>
+    </div>
+  </div>
+</div>
+
+
 
 <div class="row">
   <div class="col">
@@ -119,51 +208,6 @@ layout: layout.hbs
 <div class="row">
   <div class="col">
     <p>We're getting married in beautiful Big Sur, near(ish) the San Francisco Bay Area where we've lived for the past combined 16 years (that's how math works, right?)</p>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col">
-    <h3>getting there</h3>
-  </div>
-</div>
-<div class="row">
-  <div class="col">
-    <p>If you're flying in for the wedding, you have four airport options:</p>
-  </div>
-</div>
-<div class="row">
-  <div class="col-lg">
-    <div class="card-body">
-      <h5 class="card-title">San Francisco</h5>
-      <h6 class="card-subtitle mb-2 text-muted">SFO</h6>
-      <p class="card-text">Big. Cheapest, probably.</p>
-      <p class="card-text">2 hour drive to Carmel, 3 to the wedding venue.</p>
-    </div>
-  </div>
-  <div class="col-lg">
-    <div class="card-body">
-      <h5 class="card-title">Oakland</h5>
-      <h6 class="card-subtitle mb-2 text-muted">OAK</h6>
-      <p class="card-text">Less big. Lots of Southwest.</p>
-      <p class="card-text">Basically the same distance away from wedding-related things as SFO.</p>
-    </div>
-  </div>
-  <div class="col-lg">
-    <div class="card-body">
-      <h5 class="card-title">San Jose</h5>
-      <h6 class="card-subtitle mb-2 text-muted">SJC</h6>
-      <p class="card-text">Smaller.</p>
-      <p class="card-text">1½ hours to Carmel, 2½ to the venue.</p>
-    </div>
-  </div>
-  <div class="col-lg">
-    <div class="card-body">
-      <h5 class="card-title">Monterey</h5>
-      <h6 class="card-subtitle mb-2 text-muted">MRY</h6>
-      <p class="card-text">🌎 Here there be dragons. 🐉</p>
-      <p class="card-text">15 minutes to Carmel. 1¼ hours to the venue.</p>
-    </div>
   </div>
 </div>
 

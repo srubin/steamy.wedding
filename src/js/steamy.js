@@ -3,8 +3,18 @@ const controller = new ScrollMagic.Controller();
 const dot = document.getElementById("coastline");
 const highway = document.querySelector("#highway #Path");
 const car = document.getElementById("CAR");
+const landmarks = document.getElementById("landmarks");
+const travel = document.getElementById("travel");
 
 const airports = ["sfo", "oak", "sjc", "mry"];
+
+const places = Array.prototype.slice.call(
+  document.querySelectorAll("#places #Oval")
+);
+places.sort((a, b) => {
+  return a.getBoundingClientRect().top - b.getBoundingClientRect().top;
+});
+const landmarkCards = document.querySelectorAll("#landmarks .card-body");
 
 function preparePath(element) {
   var pathLength = element.getTotalLength();
@@ -13,7 +23,32 @@ function preparePath(element) {
 }
 
 function rad2deg(rad) {
-  return 180 * rad / Math.PI;
+  return (180 * rad) / Math.PI;
+}
+
+function updateFades(carPosition, ovals, cards) {
+  let currentOval = undefined;
+  let currentCard = undefined;
+
+  ovals.forEach((placeOval, index) => {
+    if (currentOval) {
+      return;
+    }
+
+    if (carPosition < placeOval.getBoundingClientRect().top) {
+      currentOval = placeOval;
+      currentCard = cards[index];
+    }
+  });
+
+  for (const card of cards) {
+    card.classList.add("faded");
+    card.classList.remove("highlight");
+  }
+
+  currentCard = currentCard || cards[cards.length - 1];
+  currentCard.classList.remove("faded");
+  currentCard.classList.add("highlight");
 }
 
 preparePath(dot);
@@ -42,30 +77,24 @@ new ScrollMagic.Scene({
   .addTo(controller);
 
 new ScrollMagic.Scene({
-  triggerElement: "#travel2",
-  duration: highway.getBoundingClientRect().height
+  triggerElement: "#map",
+  triggerHook: "onLeave",
+  duration: () => {
+    return landmarks.getBoundingClientRect().height;
+  }
 })
   .setTween(highwayTween)
+  .setPin("#map", { pushFollowers: false })
   .on("update", e => {
     const { startPos, endPos, scrollPos } = e;
     const pct = (scrollPos - startPos) / (endPos - startPos);
     const len = highway.getTotalLength();
-    console.log(pct);
     const dist = len * pct;
     const { x, y } = highway.getPointAtLength(dist);
 
-    const angle = 0;
-    // let angle = 0;
-    //
-    // if (dist + 1 <= len) {
-    //   const posAhead = highway.getPointAtLength(dist + 1);
-    //   angle = Math.atan2(posAhead.y - y, posAhead.x - x);
-    // } else {
-    //   const posBehind = highway.getPointAtLength(dist - 1);
-    //   angle = Math.atan2(y - posBehind.y, pos.x - x);
-    // }
+    car.setAttribute("transform", `translate(${x},${y})`);
 
-    car.setAttribute("transform", `translate(${x},${y}) rotate(${rad2deg(angle + Math.PI / 2)})`);
+    updateFades(car.getBoundingClientRect().top, places, landmarkCards);
   })
   .addIndicators()
   .addTo(controller);

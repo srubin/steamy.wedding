@@ -4,32 +4,48 @@ $color-2: #f3df50
 $color-3: #e3673d
 $color-4: #357ed4
 $color-5: #04208c
+$color-6: #bababa
 
-$display-font-stack: brandon-grotesque, sans-serif
+$display-font-stack: futura-pt, sans-serif
+$display-font-weight: 500
+$display-font-style: normal
+
+%display-fonted
+    font-family: $display-font-stack
+    font-weight: $display-font-weight
+    font-style: $display-font-style
+
+// header - kerning 100, 18 pt, orange all caps
+// subtitle - 24pt
+// text - 16pt
+
+//$display-font-stack: brandon-grotesque, sans-serif
 // 400, 700, 900, italic
 
 body
     font-family: $font-stack
 
+.container-fluid
+    padding-left: 0
+    padding-right: 0
+
 .steamy-title
+    @extend %display-fonted
     background-image: linear-gradient($color-4, $color-5)
     font-size: 3rem
-    font-weight: 800
     color: $color-2
     padding: 8rem 1rem 0rem 1rem
     text-align: center
     background-color: $color-4
-    font-family: $display-font-stack
     min-height: 100vh
     position: relative
 
     h1
-        font-weight: 700
         font-size: 4rem
 
     h2
-        font-style: italic
         font-size: 1.8rem
+        color: $color-1
 
     .waves
         margin-bottom: 4rem
@@ -45,10 +61,6 @@ body
         transform: translateX(-50%)
         .arrow
             fill: $color-2
-
-.Love
-    font-family: 'Sorts Mill Goudy', sans-serif
-    font-size: 0.6rem
 
 h3
     font-family: $display-font-stack
@@ -94,3 +106,58 @@ h4
     #mry
         top: 450px
         left: 90px
+
+#travel2
+    #map
+        float: left
+    svg
+        height: 100vh
+
+#landmarks
+    padding-bottom: 1400px // to line up the landmarks with the scrolling better
+    .card-body
+        background-color: rgba(255, 255, 255, 0.9)
+        margin-bottom: 100px
+        position: relative
+
+        img
+            margin-left: -200px
+            border-radius: 50%
+            height: 180px
+            width: 180px
+            object-fit: cover
+            position: absolute
+            //transform: translate(0, -50%)
+            top: 20px
+
+.card-body
+    @extend %display-fonted
+    max-width: 450px
+    color: $color-6
+    font-size: 16pt
+    transition: opacity 200ms
+    //transition: margin-left 200ms
+
+.faded
+    opacity: 0.5
+    img
+        opacity: 0
+        transition: opacity 200ms
+
+.highlight
+    //margin-left: -40px
+    //transition: margin-left 200ms
+
+
+.card-title
+    color: $color-3
+    text-transform: uppercase
+    padding-bottom: 18px
+    margin: 0
+    font-size: 18pt
+    letter-spacing: 2px
+
+.card-subtitle
+    color: $color-4
+    font-size: 24pt
+    padding-bottom: 14px
