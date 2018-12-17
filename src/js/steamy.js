@@ -14,6 +14,20 @@ const places = Array.prototype.slice.call(
 places.sort((a, b) => {
   return a.getBoundingClientRect().top - b.getBoundingClientRect().top;
 });
+
+// estimated distances along the highway path of the place ovals
+const placeDistances = [
+  460,
+  586,
+  616,
+  793,
+  931,
+  1047,
+  1363,
+  1505,
+  1555,
+];
+
 const landmarkCards = document.querySelectorAll("#landmarks .card-body");
 
 function preparePath(element) {
