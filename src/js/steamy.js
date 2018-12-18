@@ -78,6 +78,12 @@ new ScrollMagic.Scene({
     const dist = len * pct;
     const { x, y } = highway.getPointAtLength(dist);
 
+    if (dist < 0) {
+      car.setAttribute("visibility", "hidden");
+    } else {
+      car.removeAttribute("visibility");
+    }
+
     car.setAttribute("transform", `translate(${x},${y})`);
     updateFadesCenter(landmarkCards);
   })
