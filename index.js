@@ -1,12 +1,14 @@
 const path = require('path');
+const fs = require('fs');
 const Metalsmith = require('metalsmith');
 const markdown = require('metalsmith-markdown');
 const layouts = require('metalsmith-layouts');
-const permalinks = require('metalsmith-permalinks');
 const changed = require('metalsmith-changed');
 const nodeStatic = require('node-static');
 const watch = require('metalsmith-watch');
 const sass = require('metalsmith-sass');
+const eslint = require('metalsmith-eslint');
+const babel = require('metalsmith-babel');
 
 Metalsmith(__dirname)
   .metadata({
@@ -32,6 +34,14 @@ Metalsmith(__dirname)
   .use(layouts({
     engine: 'handlebars',
     suppressNoFilesError: true,
+  }))
+  .use(eslint({
+    src: ["**/*.js", "!**/vendor/**/*.js"],
+    formatter: "unix",
+    eslintConfig: JSON.parse(fs.readFileSync(path.join(process.cwd(), ".eslintrc"), "utf8"))
+  }))
+  .use(babel({
+    presets: ['@babel/preset-env'],
   }))
   .build((err, files) => {
     if (files) {
