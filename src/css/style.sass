@@ -241,26 +241,41 @@ h3, h4
     font-size: 24pt
     padding-bottom: 14px
 
-#lodging
+#story, #lodging
     padding: 100px 6%
-    background: linear-gradient(white, $light-pink 150px)
-    color: white
 
     h3
         @extend %body-fonted
-        color: white
         font-size: 36pt
         text-transform: uppercase
         display: inline-block
 
     h4
-        color: white
         margin-bottom: 20px
 
     .col,
     [class*="col-"]
         padding: 25px
 
+
+#lodging
+    background: linear-gradient(white, $light-pink 150px)
+    color: white
+
+    h3
+        color: white
+
+    h4
+        color: white
+
+#story
+    color: $text-black
+
+    h3
+        color: $light-pink
+
+    h4
+        color: $light-blue
 
 #details
     margin: 100px
