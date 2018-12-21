@@ -155,4 +155,43 @@ function setupUnicornScene() {
   );
 }
 
+function setupStoryScene() {
+  const stories = document.getElementById('stories');
+  const storyDivs = document.querySelectorAll('#stories>div');
+  const storyLinks = document.querySelectorAll('#storytime-nav a');
+  return (
+    new ScrollMagic.Scene({
+      triggerElement: "#storytime-nav",
+      triggerHook: "onLeave",
+      duration: () => {
+        return stories.getBoundingClientRect().height;
+      }
+    })
+      .setPin("#storytime-nav", { pushFollowers: false })
+      .on('update', () => {
+        let currentStoryIndex = undefined;
+        const windowHeight = window.innerHeight;
+        let index = 0;
+        for (const story of storyDivs) {
+            const rect = story.getBoundingClientRect();
+            if (rect.top < windowHeight) {
+              currentStoryIndex = index;
+            } else if (rect.top > windowHeight) {
+              break;
+            }
+            index += 1;
+        }
+
+        for (const link of storyLinks) {
+          link.classList.remove('active');
+        }
+        if (currentStoryIndex !== undefined) {
+          storyLinks[currentStoryIndex].classList.add('active');
+        }
+      })
+      .addTo(controller)
+  );
+}
+
 setupUnicornScene();
+setupStoryScene();

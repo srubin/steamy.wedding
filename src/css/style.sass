@@ -42,6 +42,7 @@ $body-font-style: normal
 body
     font-size: 14pt
     overflow-x: hidden
+    color: $text-black
 
 body, h1, h2, h3, h4, h5, h6
     @extend %display-fonted
@@ -299,6 +300,41 @@ h3, h4
 
     h4
         color: white
+
+#storytime
+    h3
+        text-align: center
+        width: 100%
+
+#storytime-nav
+    z-index: 100
+    background: white
+
+    .col
+        display: flex
+        justify-content: center
+        align-items: center
+
+    a
+        @extend %body-fonted
+        text-transform: uppercase
+        color: $dark-yellow
+        display: inline-block
+        //text-align: center
+        max-width: 33%
+        margin: 2px
+        padding: 4px
+        max-font-size: 18pt
+
+    a.active
+        background: $lighter-yellow
+
+
+#stories
+    div
+        min-height: 100vh
+        margin-top: 50px
+
 
 #story
     color: $text-black
