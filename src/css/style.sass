@@ -8,6 +8,7 @@ $color-6: #bababa
 $dark-pink: rgb(243, 102, 111)
 $light-pink: rgb(243, 126, 132)
 $light-yellow: rgb(242, 205, 73)
+$lighter-yellow: #f6e896
 $dark-yellow: rgb(214, 155, 37)
 $light-blue: rgb(128, 208, 243)
 $text-black: #666666
@@ -40,6 +41,7 @@ $body-font-style: normal
 
 body
     font-size: 14pt
+    overflow-x: hidden
 
 body, h1, h2, h3, h4, h5, h6
     @extend %display-fonted
@@ -97,7 +99,13 @@ h3, h4
     color: $color-4
     text-align: left
     font-weight: 500
-    font-size: 24pt
+    font-size: 22pt
+
+.subhead
+    font-size: 18pt
+    text-align: right
+    padding-bottom: 6px
+
 
 .rule
     height: 3px
@@ -212,7 +220,6 @@ h3, h4
 .card-body
     max-width: 450px
     color: $text-black
-    font-size: 16pt
     transition: opacity 200ms
     //transition: margin-left 200ms
 
@@ -233,15 +240,15 @@ h3, h4
     text-transform: uppercase
     padding-bottom: 24px
     margin: 0
-    font-size: 18pt
+    font-size: 16pt
     letter-spacing: 2px
 
 .card-subtitle
     color: $color-4
-    font-size: 24pt
+    font-size: 22pt
     padding-bottom: 14px
 
-#story, #lodging
+.infoblock
     padding: 100px 6%
 
     h3
@@ -251,11 +258,36 @@ h3, h4
         display: inline-block
 
     h4
-        margin-bottom: 20px
+        margin: 0 0 20px 0
+
+    h5
+        @extend %body-fonted
+        text-transform: uppercase
+        text-align: right
 
     .col,
     [class*="col-"]
         padding: 25px
+
+
+#schedule
+    background: $light-blue
+    color: white
+
+    .rule-right
+        background: $lighter-yellow
+
+    .subhead
+        color: $lighter-yellow
+
+    h3
+        color: white
+
+    h4
+        color: white
+
+    h5
+        color: $lighter-yellow
 
 
 #lodging
@@ -292,3 +324,7 @@ h3, h4
         font-size: 18pt
     a
         color: $color-3
+
+#unicorn
+    position: absolute
+

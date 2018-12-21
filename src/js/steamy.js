@@ -1,6 +1,6 @@
 // Enable all bootstrap tooltips with the data attribute
-$(function () {
-  $('[data-toggle="tooltip"]').tooltip()
+$(function() {
+  $('[data-toggle="tooltip"]').tooltip();
 });
 
 const controller = new ScrollMagic.Controller();
@@ -17,17 +17,7 @@ places.sort((a, b) => {
 });
 
 // estimated distances along the highway path of the place ovals
-const placeDistances = [
-  460,
-  586,
-  616,
-  793,
-  931,
-  1047,
-  1363,
-  1505,
-  1555,
-];
+const placeDistances = [460, 586, 616, 793, 931, 1047, 1363, 1505, 1555];
 
 const landmarkCards = document.querySelectorAll("#landmarks .card-body");
 
@@ -44,11 +34,11 @@ function updateFadesCenter(cards) {
     // if the top of the card is below 0%
     // and the bottom of the card is above 100%
     if (rect.top > 0 && rect.bottom < windowHeight) {
-      card.classList.add('highlight');
-      card.classList.remove('faded');
+      card.classList.add("highlight");
+      card.classList.remove("faded");
     } else {
-      card.classList.remove('highlight');
-      card.classList.add('faded');
+      card.classList.remove("highlight");
+      card.classList.add("faded");
     }
   }
 }
@@ -88,3 +78,81 @@ new ScrollMagic.Scene({
     updateFadesCenter(landmarkCards);
   })
   .addTo(controller);
+
+const header = document.getElementById("header");
+const unicorn = document.getElementById("unicorn");
+const unicornImg = document.querySelector("#unicorn img");
+const {
+  height: unicornHeight,
+  width: unicornWidth
+} = unicornImg.getBoundingClientRect();
+
+function unicornPath() {
+  const totalWidth = window.innerWidth + unicornWidth;
+  const thirdWidth = totalWidth / 3;
+  const halfUnicornWidth = unicornWidth / 2;
+  const arrowHeight = 132;
+  // let topY = arrowHeight + unicornHeight;
+  // if (window.innerWidth < 400) {
+  //   topY = arrowHeight;
+  // }
+  let topY = arrowHeight;
+  return {
+    autoRotate: true,
+    values: [
+      {
+        x: thirdWidth,
+        y: -topY
+      },
+      {
+        x: totalWidth - thirdWidth,
+        y: -topY
+      },
+      { x: totalWidth, y: 0 }
+    ]
+  };
+}
+
+function setupUnicornScene() {
+  return (
+    new ScrollMagic.Scene({
+      triggerElement: "#header",
+      triggerHook: "onLeave",
+      duration: () => {
+        return header.getBoundingClientRect().height / 3;
+      }
+    })
+      .on("update", e => {
+        const { startPos, endPos, scrollPos } = e;
+        const pct = (scrollPos - startPos) / (endPos - startPos);
+
+        if (pct < 0 || pct > 1) {
+          unicorn.style.display = "none";
+          return;
+        } else {
+          unicorn.style.display = "block";
+        }
+
+        const yOffset = 132 + unicornHeight;
+        const totalX = window.innerWidth + unicornWidth + unicornWidth;
+        const middle = totalX / 2;
+
+        const curveX = pct * totalX;
+        const a = -0.0005;
+        const curveY = a * Math.pow(curveX - middle, 2) + yOffset;
+
+        const x = curveX - (3 / 2) * unicornWidth;
+        const y = curveY + unicornWidth / 2;
+
+        const slope = 2 * a * curveX - 2 * a * middle;
+        const angle = (-Math.atan(slope) * 180) / Math.PI;
+
+        unicorn.style.top = `${window.innerHeight - y}px`;
+        unicorn.style.left = `${x}px`;
+        unicorn.style.transform = `rotate(${angle}deg)`;
+      })
+      .addTo(controller)
+  );
+}
+
+setupUnicornScene();
