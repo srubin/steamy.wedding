@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6730d43f-2ca8-462d-a630-421d9185956f" name="Default" comment="media query to better handle ios">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/css/style.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/style.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
-    </list>
+    <list default="true" id="6730d43f-2ca8-462d-a630-421d9185956f" name="Default" comment="media query to better handle ios" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -61,8 +57,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/css/style.sass">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="293">
-              <caret line="263" lean-forward="true" selection-start-line="263" selection-end-line="263" />
+            <state relative-caret-position="27">
+              <caret line="244" column="3" selection-start-line="244" selection-start-column="3" selection-end-line="244" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -265,7 +261,7 @@
       <workItem from="1544600285649" duration="23000" />
       <workItem from="1545105747598" duration="1391000" />
       <workItem from="1545108335511" duration="13010000" />
-      <workItem from="1545276612674" duration="1745000" />
+      <workItem from="1545276612674" duration="1914000" />
     </task>
     <task id="LOCAL-00001" summary="progress!">
       <created>1545120632267</created>
@@ -285,7 +281,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62003000" />
+    <option name="totallyTimeSpent" value="62172000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="924" height="962" extended-state="0" />
@@ -296,7 +292,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.30574712" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.30574712" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -420,8 +416,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/css/style.sass">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="263" lean-forward="true" selection-start-line="263" selection-end-line="263" />
+        <state relative-caret-position="27">
+          <caret line="244" column="3" selection-start-line="244" selection-start-column="3" selection-end-line="244" selection-end-column="3" />
         </state>
       </provider>
     </entry>
