@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6730d43f-2ca8-462d-a630-421d9185956f" name="Default" comment="media query to better handle ios">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/css/style.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/style.sass" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/steamy.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/steamy.js" afterDir="false" />
@@ -20,8 +21,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/js/steamy.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="316">
-              <caret line="174" column="8" lean-forward="true" selection-start-line="174" selection-start-column="8" selection-end-line="174" selection-end-column="8" />
+            <state relative-caret-position="210">
+              <caret line="167" column="7" selection-start-line="167" selection-start-column="7" selection-end-line="167" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -29,8 +30,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="245">
-              <caret line="518" column="2" lean-forward="true" selection-start-line="518" selection-start-column="2" selection-end-line="518" selection-end-column="2" />
+            <state relative-caret-position="218">
+              <caret line="509" column="22" selection-start-line="509" selection-start-column="18" selection-end-line="509" selection-end-column="22" />
+              <folding>
+                <element signature="e#2316#2323#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -38,8 +42,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/layouts/layout.hbs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="385">
-              <caret line="33" column="145" selection-start-line="33" selection-start-column="145" selection-end-line="33" selection-end-column="145" />
+            <state relative-caret-position="296">
+              <caret line="24" column="4" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -47,8 +51,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/css/style.sass">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="315" column="27" lean-forward="true" selection-start-line="315" selection-start-column="27" selection-end-line="315" selection-end-column="27" />
+            <state relative-caret-position="231">
+              <caret line="307" column="25" selection-start-line="307" selection-start-column="25" selection-end-line="307" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -65,16 +69,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>amy</find>
-      <find>rule</find>
-      <find>rule-rig</find>
-      <find>babel</find>
-      <find>car</find>
-      <find>16pt</find>
-      <find>main even</find>
-      <find>24pt</find>
-      <find>tentat</find>
-      <find>tent</find>
       <find>sched</find>
       <find>tentative sc</find>
       <find>mcway-s</find>
@@ -91,10 +85,20 @@
       <find>pin</find>
       <find>windowhe</find>
       <find>selected</find>
-      <find>acti</find>
-      <find>story</find>
       <find>push</find>
       <find>storytime-n</find>
+      <find>storytime</find>
+      <find>acti</find>
+      <find>bootstrap</find>
+      <find>story</find>
+      <find>data-inter</find>
+      <find>controle</find>
+      <find>img</find>
+      <find>nav</find>
+      <find>results pi</find>
+      <find>around y</find>
+      <find>rule</find>
+      <find>story yim</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -253,7 +257,7 @@
       <workItem from="1545105747598" duration="1391000" />
       <workItem from="1545108335511" duration="13010000" />
       <workItem from="1545276612674" duration="1914000" />
-      <workItem from="1545411792064" duration="16155000" />
+      <workItem from="1545411792064" duration="20218000" />
     </task>
     <task id="LOCAL-00001" summary="progress!">
       <created>1545120632267</created>
@@ -273,18 +277,18 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78327000" />
+    <option name="totallyTimeSpent" value="82390000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="24" width="840" height="962" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20927319" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20927319" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.30574712" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.30574712" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -375,15 +379,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/layouts/layout.hbs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="33" column="145" selection-start-line="33" selection-start-column="145" selection-end-line="33" selection-end-column="145" />
+        <state relative-caret-position="296">
+          <caret line="24" column="4" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/js/steamy.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="174" column="8" lean-forward="true" selection-start-line="174" selection-start-column="8" selection-end-line="174" selection-end-column="8" />
+        <state relative-caret-position="210">
+          <caret line="167" column="7" selection-start-line="167" selection-start-column="7" selection-end-line="167" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -397,15 +401,18 @@
         </state>
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="518" column="2" lean-forward="true" selection-start-line="518" selection-start-column="2" selection-end-line="518" selection-end-column="2" />
+        <state relative-caret-position="218">
+          <caret line="509" column="22" selection-start-line="509" selection-start-column="18" selection-end-line="509" selection-end-column="22" />
+          <folding>
+            <element signature="e#2316#2323#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/css/style.sass">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="315" column="27" lean-forward="true" selection-start-line="315" selection-start-column="27" selection-end-line="315" selection-end-column="27" />
+        <state relative-caret-position="231">
+          <caret line="307" column="25" selection-start-line="307" selection-start-column="25" selection-end-line="307" selection-end-column="25" />
         </state>
       </provider>
     </entry>

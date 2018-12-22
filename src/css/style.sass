@@ -234,7 +234,6 @@ h3, h4
 //    //margin-left: -40px
 //    //transition: margin-left 200ms
 
-
 .card-title
     @extend %body-fonted
     color: $dark-pink
@@ -249,8 +248,11 @@ h3, h4
     font-size: 22pt
     padding-bottom: 14px
 
+$infoblock-padding: 6%
+$infoblock-div-padding: 25px
+
 .infoblock
-    padding: 100px 6%
+    padding: 100px $infoblock-padding
 
     h3
         @extend %body-fonted
@@ -268,7 +270,7 @@ h3, h4
 
     .col,
     [class*="col-"]
-        padding: 25px
+        padding: $infoblock-div-padding
 
 
 #schedule
@@ -302,15 +304,21 @@ h3, h4
         color: white
 
 #storytime
+    .rule
+        margin-bottom: 40px
     h3
+        color: $dark-pink
         text-align: center
         width: 100%
 
 #storytime-nav
     z-index: 100
     background: white
+    margin: 0 -$infoblock-padding
+    width: 100vw
 
     .col
+        width: 100vw
         display: flex
         justify-content: center
         align-items: center
@@ -320,20 +328,38 @@ h3, h4
         text-transform: uppercase
         color: $dark-yellow
         display: inline-block
-        //text-align: center
-        max-width: 33%
+        max-width: 33vw
         margin: 2px
         padding: 4px
         max-font-size: 18pt
+        background-color: white
+        transition: background-color 300ms
 
     a.active
-        background: $lighter-yellow
+        background-color: $lighter-yellow
+        transition: background-color 300ms
 
 
 #stories
-    div
+    .carousel
+        max-width: calc(100vw - 100px)
+        max-height: calc(100vw - 100px)
+        width: 20em
+        height: 20em
+
+    img
+        border-radius: 50%
+        height: 20em
+        width: 20em
+        max-width: calc(100vw - 100px)
+        max-height: calc(100vw - 100px)
+        object-fit: cover
+
+    > div
         min-height: 100vh
-        margin-top: 50px
+        // to leave space for the sticky nav
+        padding-top: 80px
+        margin-top: -80px
 
 
 #story

@@ -157,7 +157,7 @@ function setupUnicornScene() {
 
 function setupStoryScene() {
   const stories = document.getElementById('stories');
-  const storyDivs = document.querySelectorAll('#stories>div');
+  const storyDivs = document.querySelectorAll('#stories>div>div');
   const storyLinks = document.querySelectorAll('#storytime-nav a');
   return (
     new ScrollMagic.Scene({
@@ -174,9 +174,8 @@ function setupStoryScene() {
         let index = 0;
         for (const story of storyDivs) {
             const rect = story.getBoundingClientRect();
-            if (rect.top < windowHeight) {
+            if (rect.bottom - 120 > 0) {
               currentStoryIndex = index;
-            } else if (rect.top > windowHeight) {
               break;
             }
             index += 1;
