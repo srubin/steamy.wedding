@@ -11,6 +11,7 @@ $light-yellow: rgb(242, 205, 73)
 $lighter-yellow: #f6e896
 $dark-yellow: rgb(214, 155, 37)
 $light-blue: rgb(128, 208, 243)
+$dark-blue: rgb(121, 181, 213)
 $text-black: #666666
 
 $title-dark: #1b91d7
@@ -194,6 +195,9 @@ h3, h4
 #landmarks
     padding-bottom: 1400px // to line up the landmarks with the scrolling better
 
+    a
+        color: $dark-blue
+
     h6
         color: $light-blue
 
@@ -303,13 +307,23 @@ $infoblock-div-padding: 25px
     h4
         color: white
 
+#storytime-pin
+    background: white
+    z-index: 100
+
 #storytime
     .rule
-        margin-bottom: 40px
+        //margin-bottom: 40px
+        margin-bottom: -25px
+
     h3
         color: $dark-pink
         text-align: center
         width: 100%
+
+    .row
+        max-width: 860px
+        margin: 0 auto
 
 #storytime-nav
     z-index: 100
@@ -358,8 +372,8 @@ $infoblock-div-padding: 25px
     > div
         min-height: 100vh
         // to leave space for the sticky nav
-        padding-top: 80px
-        margin-top: -80px
+        padding-top: 180px
+        margin-top: -180px
 
 
 #story
@@ -390,3 +404,16 @@ $infoblock-div-padding: 25px
 #unicorn
     position: absolute
 
+#footer
+    background: $dark-pink
+    color: white
+    text-align: center
+
+    a
+        color: white
+
+.modal-header
+    border: none
+
+.table
+    @extend %body-fonted

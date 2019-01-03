@@ -114,82 +114,78 @@ function unicornPath() {
 }
 
 function setupUnicornScene() {
-  return (
-    new ScrollMagic.Scene({
-      triggerElement: "#header",
-      triggerHook: "onLeave",
-      duration: () => {
-        return header.getBoundingClientRect().height / 3;
+  return new ScrollMagic.Scene({
+    triggerElement: "#header",
+    triggerHook: "onLeave",
+    duration: () => {
+      return header.getBoundingClientRect().height / 3;
+    }
+  })
+    .on("update", e => {
+      const { startPos, endPos, scrollPos } = e;
+      const pct = (scrollPos - startPos) / (endPos - startPos);
+
+      if (pct < 0 || pct > 1) {
+        unicorn.style.display = "none";
+        return;
+      } else {
+        unicorn.style.display = "block";
       }
+
+      const yOffset = 132 + unicornHeight;
+      const totalX = window.innerWidth + unicornWidth + unicornWidth;
+      const middle = totalX / 2;
+
+      const curveX = pct * totalX;
+      const a = -0.0005;
+      const curveY = a * Math.pow(curveX - middle, 2) + yOffset;
+
+      const x = curveX - (3 / 2) * unicornWidth;
+      const y = curveY + unicornWidth / 2;
+
+      const slope = 2 * a * curveX - 2 * a * middle;
+      const angle = (-Math.atan(slope) * 180) / Math.PI;
+
+      unicorn.style.top = `${window.innerHeight - y}px`;
+      unicorn.style.left = `${x}px`;
+      unicorn.style.transform = `rotate(${angle}deg)`;
     })
-      .on("update", e => {
-        const { startPos, endPos, scrollPos } = e;
-        const pct = (scrollPos - startPos) / (endPos - startPos);
-
-        if (pct < 0 || pct > 1) {
-          unicorn.style.display = "none";
-          return;
-        } else {
-          unicorn.style.display = "block";
-        }
-
-        const yOffset = 132 + unicornHeight;
-        const totalX = window.innerWidth + unicornWidth + unicornWidth;
-        const middle = totalX / 2;
-
-        const curveX = pct * totalX;
-        const a = -0.0005;
-        const curveY = a * Math.pow(curveX - middle, 2) + yOffset;
-
-        const x = curveX - (3 / 2) * unicornWidth;
-        const y = curveY + unicornWidth / 2;
-
-        const slope = 2 * a * curveX - 2 * a * middle;
-        const angle = (-Math.atan(slope) * 180) / Math.PI;
-
-        unicorn.style.top = `${window.innerHeight - y}px`;
-        unicorn.style.left = `${x}px`;
-        unicorn.style.transform = `rotate(${angle}deg)`;
-      })
-      .addTo(controller)
-  );
+    .addTo(controller);
 }
 
 function setupStoryScene() {
-  const stories = document.getElementById('stories');
-  const storyDivs = document.querySelectorAll('#stories>div>div');
-  const storyLinks = document.querySelectorAll('#storytime-nav a');
-  return (
-    new ScrollMagic.Scene({
-      triggerElement: "#storytime-nav",
-      triggerHook: "onLeave",
-      duration: () => {
-        return stories.getBoundingClientRect().height;
+  const stories = document.getElementById("stories");
+  const storyDivs = document.querySelectorAll("#stories>div>div");
+  const storyLinks = document.querySelectorAll("#storytime-nav a");
+  return new ScrollMagic.Scene({
+    triggerElement: "#storytime-pin",
+    triggerHook: "onLeave",
+    duration: () => {
+      return stories.getBoundingClientRect().height;
+    }
+  })
+    .setPin("#storytime-pin", { pushFollowers: false })
+    .on("update", () => {
+      let currentStoryIndex = undefined;
+      const windowHeight = window.innerHeight;
+      let index = 0;
+      for (const story of storyDivs) {
+        const rect = story.getBoundingClientRect();
+        if (rect.bottom - 120 > 0) {
+          currentStoryIndex = index;
+          break;
+        }
+        index += 1;
+      }
+
+      for (const link of storyLinks) {
+        link.classList.remove("active");
+      }
+      if (currentStoryIndex !== undefined) {
+        storyLinks[currentStoryIndex].classList.add("active");
       }
     })
-      .setPin("#storytime-nav", { pushFollowers: false })
-      .on('update', () => {
-        let currentStoryIndex = undefined;
-        const windowHeight = window.innerHeight;
-        let index = 0;
-        for (const story of storyDivs) {
-            const rect = story.getBoundingClientRect();
-            if (rect.bottom - 120 > 0) {
-              currentStoryIndex = index;
-              break;
-            }
-            index += 1;
-        }
-
-        for (const link of storyLinks) {
-          link.classList.remove('active');
-        }
-        if (currentStoryIndex !== undefined) {
-          storyLinks[currentStoryIndex].classList.add('active');
-        }
-      })
-      .addTo(controller)
-  );
+    .addTo(controller);
 }
 
 setupUnicornScene();
