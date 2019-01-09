@@ -90,13 +90,7 @@ const {
 function unicornPath() {
   const totalWidth = window.innerWidth + unicornWidth;
   const thirdWidth = totalWidth / 3;
-  const halfUnicornWidth = unicornWidth / 2;
-  const arrowHeight = 132;
-  // let topY = arrowHeight + unicornHeight;
-  // if (window.innerWidth < 400) {
-  //   topY = arrowHeight;
-  // }
-  let topY = arrowHeight;
+  let topY = 132; // arrow height
   return {
     autoRotate: true,
     values: [
@@ -118,7 +112,7 @@ function setupUnicornScene() {
     triggerElement: "#header",
     triggerHook: "onLeave",
     duration: () => {
-      return header.getBoundingClientRect().height / 3;
+      return header.getBoundingClientRect().height * 0.7;
     }
   })
     .on("update", e => {
@@ -157,6 +151,7 @@ function setupStoryScene() {
   const stories = document.getElementById("stories");
   const storyDivs = document.querySelectorAll("#stories>div>div");
   const storyLinks = document.querySelectorAll("#storytime-nav a");
+  const storyPin = document.getElementById('storytime-pin');
   return new ScrollMagic.Scene({
     triggerElement: "#storytime-pin",
     triggerHook: "onLeave",
@@ -169,9 +164,10 @@ function setupStoryScene() {
       let currentStoryIndex = undefined;
       const windowHeight = window.innerHeight;
       let index = 0;
+      const storyPinRect = storyPin.getBoundingClientRect();
       for (const story of storyDivs) {
         const rect = story.getBoundingClientRect();
-        if (rect.bottom - 120 > 0) {
+        if (rect.bottom - storyPinRect.height > 0) {
           currentStoryIndex = index;
           break;
         }

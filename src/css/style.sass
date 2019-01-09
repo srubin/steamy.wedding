@@ -272,6 +272,10 @@ $infoblock-div-padding: 25px
         text-transform: uppercase
         text-align: right
 
+    a
+        color: white
+        text-decoration: underline
+
     .col,
     [class*="col-"]
         padding: $infoblock-div-padding
@@ -307,6 +311,9 @@ $infoblock-div-padding: 25px
     h4
         color: white
 
+    h4:not(:first-child)
+        margin-top: 40px
+
 #storytime-pin
     background: white
     z-index: 100
@@ -328,8 +335,6 @@ $infoblock-div-padding: 25px
 #storytime-nav
     z-index: 100
     background: white
-    margin: 0 -$infoblock-padding
-    width: 100vw
 
     .col
         width: 100vw
@@ -345,9 +350,14 @@ $infoblock-div-padding: 25px
         max-width: 33vw
         margin: 2px
         padding: 4px
-        max-font-size: 18pt
+        font-size: 16pt
+
+        @media (max-width: 615px)
+            font-size: 12pt
+
         background-color: white
         transition: background-color 300ms
+        text-decoration: none
 
     a.active
         background-color: $lighter-yellow
@@ -409,11 +419,11 @@ $infoblock-div-padding: 25px
     color: white
     text-align: center
 
-    a
-        color: white
-
 .modal-header
     border: none
 
 .table
     @extend %body-fonted
+
+.footnote
+    font-size: 8pt
