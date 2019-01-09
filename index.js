@@ -9,6 +9,7 @@ const watch = require('metalsmith-watch');
 const sass = require('metalsmith-sass');
 const eslint = require('metalsmith-eslint');
 const babel = require('metalsmith-babel');
+const buildStatic = process.argv.indexOf('--static') >= 0;
 
 Metalsmith(__dirname)
   .metadata({
@@ -23,7 +24,7 @@ Metalsmith(__dirname)
         "${source}/**/*": true,
         "layouts/**/*": true,
       },
-      livereload: true,
+      livereload: !buildStatic,
     })
   )
   .use(changed())
@@ -50,10 +51,16 @@ Metalsmith(__dirname)
     } else {
       console.error(err);
     }
+
+    if (buildStatic) {
+      process.exit(0);
+    }
   });
 
-const serve = new nodeStatic.Server(path.join(__dirname, 'build'));
-require('http').createServer((req, res) => {
-  req.addListener('end', () => serve.serve(req, res));
-  req.resume();
-}).listen(8080);
+if (!buildStatic) {
+  const serve = new nodeStatic.Server(path.join(__dirname, 'build'));
+  require('http').createServer((req, res) => {
+    req.addListener('end', () => serve.serve(req, res));
+    req.resume();
+  }).listen(8080);
+}

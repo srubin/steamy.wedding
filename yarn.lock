@@ -3247,6 +3247,13 @@ metalsmith-discover-partials@^0.1.2:
     fs-tools "^0.5.0"
     handlebars "*"
 
+metalsmith-env@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/metalsmith-env/-/metalsmith-env-2.1.1.tgz#101510b736405e86fb81f195200b649117233ea6"
+  integrity sha1-EBUQtzZAXob7gfGVIAtkkRcjPqY=
+  dependencies:
+    extend-shallow "^3.0.0"
+
 metalsmith-eslint@^3.1.5:
   version "3.1.5"
   resolved "https://registry.yarnpkg.com/metalsmith-eslint/-/metalsmith-eslint-3.1.5.tgz#75c0c7d7634ec5f90cfc62ec17b8415ca71572ac"
