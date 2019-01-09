@@ -1,0 +1,429 @@
+$color-1: #f0f3f6
+$color-2: #f3df50
+$color-3: #e3673d
+$color-4: #357ed4
+$color-5: #04208c
+$color-6: #bababa
+
+$dark-pink: rgb(243, 102, 111)
+$light-pink: rgb(243, 126, 132)
+$light-yellow: rgb(242, 205, 73)
+$lighter-yellow: #f6e896
+$dark-yellow: rgb(214, 155, 37)
+$light-blue: rgb(128, 208, 243)
+$dark-blue: rgb(121, 181, 213)
+$text-black: #666666
+
+$title-dark: #1b91d7
+$title-light: #357ed4
+$accent-light: #f3d63c
+
+$display-font-stack: 'Playfair Display', serif
+$display-font-weight: 900
+$display-font-style: normal
+
+$body-font-stack: futura-pt, sans-serif
+$body-font-weight: 500
+$body-font-style: normal
+
+%body-fonted
+    font-family: $body-font-stack
+    font-weight: $body-font-weight
+    font-style: $body-font-style
+
+%display-fonted
+    font-family: $display-font-stack
+    font-weight: $display-font-weight
+    font-style: $display-font-style
+
+// header - kerning 100, 18 pt, orange all caps
+// subtitle - 24pt
+// text - 16pt
+
+body
+    font-size: 14pt
+    overflow-x: hidden
+    color: $text-black
+
+body, h1, h2, h3, h4, h5, h6
+    @extend %display-fonted
+
+p
+    @extend %body-fonted
+
+// no gutters by default
+.row
+    margin-right: 0
+    margin-left: 0
+
+    > .col,
+    > [class*="col-"]
+        padding-right: 0
+        padding-left: 0
+
+.steamy-title
+    background: $dark-pink
+    font-size: 3rem
+    color: $light-yellow
+    padding: 8rem 1rem 0 1rem
+    text-align: center
+    min-height: 100vh
+    position: relative
+
+    h1
+        font-size: 60pt
+        padding: 20px
+
+    h2
+        @extend %body-fonted
+        font-size: 24pt
+        color: white
+        text-transform: uppercase
+
+    .waves
+        margin-bottom: 4rem
+
+
+    .yay
+        color: white
+        @extend %body-fonted
+        position: absolute
+        bottom: 10px
+        font-size: 1.5rem
+        font-weight: 500
+        width: 10rem
+        left: 50%
+        transform: translateX(-50%)
+        .arrow
+            fill: white
+
+h3, h4
+    color: $color-4
+    text-align: left
+    font-weight: 500
+    font-size: 22pt
+
+.subhead
+    font-size: 18pt
+    text-align: right
+    padding-bottom: 6px
+
+
+.rule
+    height: 3px
+    background: $light-yellow
+    width: 64px
+    margin: 18px auto
+
+.rule-right
+    height: 3px
+    background: $light-yellow
+    width: 80px
+    margin: 18px 0 18px auto
+
+
+#basics
+    background: linear-gradient($light-yellow, $dark-yellow)
+    color: white
+    text-align: center
+    font-size: 14pt
+
+    h3
+        @extend %body-fonted
+        text-transform: uppercase
+        text-align: center
+        color: white
+
+    [class*="col-"]
+        padding: 200px 8%
+
+#travel
+    min-height: 100vh
+    position: relative
+    .location
+        opacity: 0
+        position: absolute
+    .location-details
+        opacity: 0
+    #sfo
+        top: 100px
+        left: 50px
+    #oak
+        top: 40px
+        left: 120px
+    #sjc
+        top: 200px
+        left: 135px
+    #mry
+        top: 450px
+        left: 90px
+
+#bigsur
+    background-image: url('../img/topo.png')
+    background-color: $dark-yellow
+    padding: 12% 8%
+
+    img
+        float: right
+        max-height: 300px
+
+    h3
+        font-size: 60pt
+        color: $light-yellow
+        text-transform: lowercase
+        padding-bottom: 40px
+
+    p
+        color: white
+        font-size: 14pt
+
+@media (max-width: 615px)
+    #travel2
+        svg
+            margin-left: -15%
+
+#travel2
+    #map
+        float: left
+    svg
+        height: 100vh
+    #water
+        fill: $light-blue
+    #highway
+        stroke: $dark-yellow
+
+#landmarks
+    padding-bottom: 1400px // to line up the landmarks with the scrolling better
+
+    a
+        color: $dark-blue
+
+    h6
+        color: $light-blue
+
+    .card-body
+        background-color: rgba(255, 255, 255, 0.9)
+        margin-bottom: 100px
+        position: relative
+
+        img
+            margin-left: -200px
+            border-radius: 50%
+            height: 180px
+            width: 180px
+            object-fit: cover
+            position: absolute
+            //transform: translate(0, -50%)
+            top: 20px
+
+#airports
+    padding: 8% 4%
+
+    h6
+        color: $light-blue
+
+.card-body
+    max-width: 450px
+    color: $text-black
+    transition: opacity 200ms
+    //transition: margin-left 200ms
+
+.faded
+    opacity: 0.5
+    img
+        opacity: 0
+        transition: opacity 200ms
+
+//.highlight
+//    //margin-left: -40px
+//    //transition: margin-left 200ms
+
+.card-title
+    @extend %body-fonted
+    color: $dark-pink
+    text-transform: uppercase
+    padding-bottom: 24px
+    margin: 0
+    font-size: 16pt
+    letter-spacing: 2px
+
+.card-subtitle
+    color: $color-4
+    font-size: 22pt
+    padding-bottom: 14px
+
+$infoblock-padding: 6%
+$infoblock-div-padding: 25px
+
+.infoblock
+    padding: 100px $infoblock-padding
+
+    h3
+        @extend %body-fonted
+        font-size: 36pt
+        text-transform: uppercase
+        display: inline-block
+
+    h4
+        margin: 0 0 20px 0
+
+    h5
+        @extend %body-fonted
+        text-transform: uppercase
+        text-align: right
+
+    a
+        color: white
+        text-decoration: underline
+
+    .col,
+    [class*="col-"]
+        padding: $infoblock-div-padding
+
+
+#schedule
+    background: $light-blue
+    color: white
+
+    .rule-right
+        background: $lighter-yellow
+
+    .subhead
+        color: $lighter-yellow
+
+    h3
+        color: white
+
+    h4
+        color: white
+
+    h5
+        color: $lighter-yellow
+
+
+#lodging
+    background: linear-gradient(white, $light-pink 150px)
+    color: white
+
+    h3
+        color: white
+
+    h4
+        color: white
+
+    h4:not(:first-child)
+        margin-top: 40px
+
+#storytime-pin
+    background: white
+    z-index: 100
+
+#storytime
+    .rule
+        //margin-bottom: 40px
+        margin-bottom: -25px
+
+    h3
+        color: $dark-pink
+        text-align: center
+        width: 100%
+
+    .row
+        max-width: 860px
+        margin: 0 auto
+
+#storytime-nav
+    z-index: 100
+    background: white
+
+    .col
+        width: 100vw
+        display: flex
+        justify-content: center
+        align-items: center
+
+    a
+        @extend %body-fonted
+        text-transform: uppercase
+        color: $dark-yellow
+        display: inline-block
+        max-width: 33vw
+        margin: 2px
+        padding: 4px
+        font-size: 16pt
+
+        @media (max-width: 615px)
+            font-size: 12pt
+
+        background-color: white
+        transition: background-color 300ms
+        text-decoration: none
+
+    a.active
+        background-color: $lighter-yellow
+        transition: background-color 300ms
+
+
+#stories
+    .carousel
+        max-width: calc(100vw - 100px)
+        max-height: calc(100vw - 100px)
+        width: 20em
+        height: 20em
+
+    img
+        border-radius: 50%
+        height: 20em
+        width: 20em
+        max-width: calc(100vw - 100px)
+        max-height: calc(100vw - 100px)
+        object-fit: cover
+
+    > div
+        min-height: 100vh
+        // to leave space for the sticky nav
+        padding-top: 180px
+        margin-top: -180px
+
+
+#story
+    color: $text-black
+
+    h3
+        color: $light-pink
+
+    h4
+        color: $light-blue
+
+#details
+    margin: 100px
+    color: $text-black
+    font-size: 14pt
+
+    .col
+        padding: 25px
+
+    h2
+        text-align: center
+        padding-bottom: 50px
+    h3
+        font-size: 18pt
+    a
+        color: $color-3
+
+#unicorn
+    position: absolute
+
+#footer
+    background: $dark-pink
+    color: white
+    text-align: center
+
+.modal-header
+    border: none
+
+.table
+    @extend %body-fonted
+
+.footnote
+    font-size: 8pt
