@@ -442,3 +442,58 @@ $infoblock-div-padding: 25px
 
 .footnote
     font-size: 8pt
+
+#photos
+    background: linear-gradient($light-yellow, $dark-yellow)
+    color: white
+    text-align: center
+    font-size: 14pt
+    height: 100vh
+
+    a
+        color: white
+        text-decoration: underline
+
+    h3
+        @extend %body-fonted
+        text-transform: uppercase
+        text-align: center
+        color: white
+
+    [class*="col-"]
+        padding: 200px 5%
+
+blockquote
+    @extend %body-fonted
+    display: block
+    border-width: 2px 0
+    border-style: solid
+    border-color: #eee
+    padding: 1.5em 0 0.5em
+    margin: 1.5em 0
+    position: relative
+
+blockquote:before
+    content: '\201C'
+    position: absolute
+    top: -10px
+    left: 50%
+    transform: translate(-50%, -50%)
+    width: 3rem
+    height: 2rem
+    font: 6em/1.08em 'PT Sans', sans-serif
+    color: white
+    text-align: center
+
+blockquote:after
+    content: "\2013 \2003" attr(cite)
+    display: block
+    text-align: right
+    font-size: 0.875em
+
+.gallery
+    border: 2px solid #eee
+    width: 25%
+    margin: 0 auto
+    padding: 10px 5px
+    background: rgba(255,255,255,0.2)
